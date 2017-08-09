@@ -1,7 +1,9 @@
-#include <cstdio>
+#include <SDL\SDL.h>
+#include "window.h"
 
 int main(int argc, char * argv[]) {
 
-	fprintf(stderr, "hello");
+	Window window(argc, argv);
+	window.run();
 	return 0;
 }
