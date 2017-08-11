@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E52F1C991F3DFE370051A427 /* canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C891F3DFE370051A427 /* canvas.cpp */; };
+		E52F1C9A1F3DFE370051A427 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C8B1F3DFE370051A427 /* color.cpp */; };
+		E52F1C9B1F3DFE370051A427 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C8F1F3DFE370051A427 /* Mesh.cpp */; };
+		E52F1C9C1F3DFE370051A427 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C931F3DFE370051A427 /* texture.cpp */; };
+		E52F1C9D1F3DFE370051A427 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C951F3DFE370051A427 /* vector.cpp */; };
 		E54F8FE41F384FAA001B414D /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54F8FE11F384FAA001B414D /* SDL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E54F8FE51F384FAA001B414D /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = E54F8FE31F384FAA001B414D /* SDLMain.m */; };
 		E54F8FE71F385178001B414D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E54F8FE61F385178001B414D /* main.mm */; };
@@ -27,14 +32,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E52F1C891F3DFE370051A427 /* canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = canvas.cpp; sourceTree = "<group>"; };
+		E52F1C8A1F3DFE370051A427 /* canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = canvas.h; sourceTree = "<group>"; };
+		E52F1C8B1F3DFE370051A427 /* color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
+		E52F1C8C1F3DFE370051A427 /* color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
+		E52F1C8D1F3DFE370051A427 /* image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
+		E52F1C8E1F3DFE370051A427 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		E52F1C8F1F3DFE370051A427 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		E52F1C901F3DFE370051A427 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		E52F1C911F3DFE370051A427 /* rmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rmath.h; sourceTree = "<group>"; };
+		E52F1C921F3DFE370051A427 /* rutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rutil.h; sourceTree = "<group>"; };
+		E52F1C931F3DFE370051A427 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		E52F1C941F3DFE370051A427 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
+		E52F1C951F3DFE370051A427 /* vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
+		E52F1C961F3DFE370051A427 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+		E52F1C971F3DFE370051A427 /* vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vertex.h; sourceTree = "<group>"; };
+		E52F1C981F3DFE370051A427 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
 		E54F8FD21F384E67001B414D /* render */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = render; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54F8FE11F384FAA001B414D /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
 		E54F8FE21F384FAA001B414D /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
 		E54F8FE31F384FAA001B414D /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
 		E54F8FE61F385178001B414D /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = platform/macos/main.mm; sourceTree = SOURCE_ROOT; };
-		E54F8FEA1F3863FB001B414D /* rmath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rmath.h; sourceTree = "<group>"; };
-		E54F8FEB1F3868C1001B414D /* window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
-		E54F8FEC1F386DAC001B414D /* rutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rutil.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +67,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E52F1C881F3DFE370051A427 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E52F1C891F3DFE370051A427 /* canvas.cpp */,
+				E52F1C8A1F3DFE370051A427 /* canvas.h */,
+				E52F1C8B1F3DFE370051A427 /* color.cpp */,
+				E52F1C8C1F3DFE370051A427 /* color.h */,
+				E52F1C8D1F3DFE370051A427 /* image.h */,
+				E52F1C8E1F3DFE370051A427 /* matrix.h */,
+				E52F1C8F1F3DFE370051A427 /* Mesh.cpp */,
+				E52F1C901F3DFE370051A427 /* Mesh.h */,
+				E52F1C911F3DFE370051A427 /* rmath.h */,
+				E52F1C921F3DFE370051A427 /* rutil.h */,
+				E52F1C931F3DFE370051A427 /* texture.cpp */,
+				E52F1C941F3DFE370051A427 /* texture.h */,
+				E52F1C951F3DFE370051A427 /* vector.cpp */,
+				E52F1C961F3DFE370051A427 /* vector.h */,
+				E52F1C971F3DFE370051A427 /* vertex.h */,
+				E52F1C981F3DFE370051A427 /* window.h */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		E54F8FC91F384E67001B414D = {
 			isa = PBXGroup;
 			children = (
-				E54F8FE91F3863E1001B414D /* source */,
+				E52F1C881F3DFE370051A427 /* source */,
 				E54F8FE01F384FAA001B414D /* macos */,
 				E54F8FD41F384E67001B414D /* render */,
 				E54F8FD31F384E67001B414D /* Products */,
@@ -84,16 +125,6 @@
 			);
 			name = macos;
 			path = platform/macos;
-			sourceTree = "<group>";
-		};
-		E54F8FE91F3863E1001B414D /* source */ = {
-			isa = PBXGroup;
-			children = (
-				E54F8FEA1F3863FB001B414D /* rmath.h */,
-				E54F8FEB1F3868C1001B414D /* window.h */,
-				E54F8FEC1F386DAC001B414D /* rutil.h */,
-			);
-			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +185,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54F8FE51F384FAA001B414D /* SDLMain.m in Sources */,
+				E52F1C9A1F3DFE370051A427 /* color.cpp in Sources */,
+				E52F1C991F3DFE370051A427 /* canvas.cpp in Sources */,
+				E52F1C9C1F3DFE370051A427 /* texture.cpp in Sources */,
 				E54F8FE71F385178001B414D /* main.mm in Sources */,
+				E52F1C9B1F3DFE370051A427 /* Mesh.cpp in Sources */,
+				E52F1C9D1F3DFE370051A427 /* vector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

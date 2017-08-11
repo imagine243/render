@@ -31,7 +31,7 @@ public:
         SDL_Surface * screen = SDL_SetVideoMode(width,height,32,SDL_SWSURFACE);
         if(screen == NULL){
             SDL_Quit();
-            fprintf("SDL_SetVideoMode failed \n");
+            fprintf(stderr, "SDL_SetVideoMode failed \n");
         }
         _screen = screen;
 

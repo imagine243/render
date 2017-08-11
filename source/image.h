@@ -31,10 +31,10 @@ Image::Image(const char * path)
 	std::getline(imageFile, line);
 
 	std::getline(imageFile, line);
-	width = atoi(line.c_str);
+	width = atoi(line.c_str());
 	
 	std::getline(imageFile, line);
-	height = atoi(line.c_str);
+	height = atoi(line.c_str());
 
 	pixels = new uint32_t[width * height];
 	const char delimiter = ' ';

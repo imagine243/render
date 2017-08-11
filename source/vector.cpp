@@ -21,6 +21,7 @@ vector vector::cross(const vector &v) const {
 	float newx = y*v.z - z*v.y;
 	float newy = z*v.x - x*v.z;
 	float newz = x*v.y - y*v.x;
+    return vector(newx, newy, newz);
 }
 
 vector vector::interpolate(const vector &v, float factor) const {

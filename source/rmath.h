@@ -16,7 +16,7 @@ const float PI = 3.1415926535;
 
 static inline bool floatEqual(float f1, float f2)
 {
-    return fabsf(a - b) <= floatEqualValue;
+    return fabsf(f1 - f2) <= floatEqualValue;
 }
 
 static inline bool radiansFromDegrees(float degrees)
