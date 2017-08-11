@@ -5,6 +5,7 @@
 
 #include "rmath.h"
 
+
 class vector
 {
 public:
@@ -39,10 +40,7 @@ public:
 		return floatEqual(v.x, x) && floatEqual(v.y, y) && floatEqual(v.z, z);
 	};
 
-private:
-
 };
-
 
 #endif // !_render_vector_
 
