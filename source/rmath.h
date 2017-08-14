@@ -12,7 +12,7 @@
 #include <cmath>
 
 const float floatEqualValue = 0.001f;
-const float PI = 3.1415926535;
+const float PI = 3.1415926535f;
 
 static inline bool floatEqual(float f1, float f2)
 {
