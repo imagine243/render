@@ -159,7 +159,10 @@ public:
 		return vector(x / w, y / w, z / w);
 	}
 
-	virtual ~matrix();
+	virtual ~matrix()
+    {
+        
+    };
 
 
 };

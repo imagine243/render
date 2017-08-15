@@ -1,11 +1,13 @@
 #include "canvas.h"
 
+#include <cfloat>
+
 void Canvas::putPixel(int x, int y, float z, const color &c)
 {
 	int index = x + y * _width;
 	float depth = _depthBuffer[index];
 
-	if (depth < z);
+	if (depth < z)
 	{
 		return;
 	}
