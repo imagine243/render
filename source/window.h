@@ -11,12 +11,15 @@
 
 #include <cstdio>            // fprint function, stderr
 #include "rutil.h"
+#include "canvas.h"
 
 static const int WindowWidth = 800;
 static const int WindowHeight = 600;
 
 class Window {
     SDL_Surface * _screen;
+    Canvas * _canvas;
+    Mesh * _mesh;
     
     int _width;
     int _height;
