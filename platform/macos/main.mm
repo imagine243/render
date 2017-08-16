@@ -7,12 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <SDL/SDL.h>
 #import "window.h"
 
 int main(int argc, char * argv[])
 {
     NSLog(@"hello");
     Window window(argc, argv);
+    window.run();
     return 0;
 }
