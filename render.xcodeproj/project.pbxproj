@@ -12,20 +12,33 @@
 		E52F1C9B1F3DFE370051A427 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C8F1F3DFE370051A427 /* Mesh.cpp */; };
 		E52F1C9C1F3DFE370051A427 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C931F3DFE370051A427 /* texture.cpp */; };
 		E52F1C9D1F3DFE370051A427 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52F1C951F3DFE370051A427 /* vector.cpp */; };
-		E54F8FE41F384FAA001B414D /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54F8FE11F384FAA001B414D /* SDL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E54F8FE51F384FAA001B414D /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = E54F8FE31F384FAA001B414D /* SDLMain.m */; };
 		E54F8FE71F385178001B414D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E54F8FE61F385178001B414D /* main.mm */; };
-		E54F8FE81F3853C7001B414D /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E54F8FE11F384FAA001B414D /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E5E526FE1F4417AB003A53A4 /* illidan.gua3d in CopyFiles */ = {isa = PBXBuildFile; fileRef = E5E526FC1F4417A2003A53A4 /* illidan.gua3d */; };
+		E5E526FF1F4417AB003A53A4 /* illidan.guaimage in CopyFiles */ = {isa = PBXBuildFile; fileRef = E5E526FD1F4417A2003A53A4 /* illidan.guaimage */; };
+		E5E527011F443B6C003A53A4 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E527001F443B6C003A53A4 /* SDL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E5E527021F443B7F003A53A4 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E5E527001F443B6C003A53A4 /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E54F8FD01F384E67001B414D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = usr/share/man/man1;
+			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E54F8FE81F3853C7001B414D /* SDL.framework in CopyFiles */,
+				E5E527021F443B7F003A53A4 /* SDL.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5E526FB1F441780003A53A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E5E526FE1F4417AB003A53A4 /* illidan.gua3d in CopyFiles */,
+				E5E526FF1F4417AB003A53A4 /* illidan.guaimage in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,10 +62,12 @@
 		E52F1C971F3DFE370051A427 /* vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vertex.h; sourceTree = "<group>"; };
 		E52F1C981F3DFE370051A427 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
 		E54F8FD21F384E67001B414D /* render */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = render; sourceTree = BUILT_PRODUCTS_DIR; };
-		E54F8FE11F384FAA001B414D /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
 		E54F8FE21F384FAA001B414D /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
 		E54F8FE31F384FAA001B414D /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
 		E54F8FE61F385178001B414D /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = platform/macos/main.mm; sourceTree = SOURCE_ROOT; };
+		E5E526FC1F4417A2003A53A4 /* illidan.gua3d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = illidan.gua3d; path = ../renderer.gua/illidan.gua3d; sourceTree = "<group>"; };
+		E5E526FD1F4417A2003A53A4 /* illidan.guaimage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = illidan.guaimage; path = ../renderer.gua/illidan.guaimage; sourceTree = "<group>"; };
+		E5E527001F443B6C003A53A4 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54F8FE41F384FAA001B414D /* SDL.framework in Frameworks */,
+				E5E527011F443B6C003A53A4 /* SDL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +108,8 @@
 		E54F8FC91F384E67001B414D = {
 			isa = PBXGroup;
 			children = (
+				E5E526FC1F4417A2003A53A4 /* illidan.gua3d */,
+				E5E526FD1F4417A2003A53A4 /* illidan.guaimage */,
 				E52F1C881F3DFE370051A427 /* source */,
 				E54F8FE01F384FAA001B414D /* macos */,
 				E54F8FD41F384E67001B414D /* render */,
@@ -119,7 +136,7 @@
 		E54F8FE01F384FAA001B414D /* macos */ = {
 			isa = PBXGroup;
 			children = (
-				E54F8FE11F384FAA001B414D /* SDL.framework */,
+				E5E527001F443B6C003A53A4 /* SDL.framework */,
 				E54F8FE21F384FAA001B414D /* SDLMain.h */,
 				E54F8FE31F384FAA001B414D /* SDLMain.m */,
 			);
@@ -136,6 +153,7 @@
 			buildPhases = (
 				E54F8FCE1F384E67001B414D /* Sources */,
 				E54F8FCF1F384E67001B414D /* Frameworks */,
+				E5E526FB1F441780003A53A4 /* CopyFiles */,
 				E54F8FD01F384E67001B414D /* CopyFiles */,
 			);
 			buildRules = (

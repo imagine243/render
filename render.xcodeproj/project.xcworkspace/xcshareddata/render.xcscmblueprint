@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "374BA58D15594591BF05794F0591B1E49A62DCEC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B0DA067E2EF33E6F94AB021492BB2AE555B1133A" : 9223372036854775807,
+    "374BA58D15594591BF05794F0591B1E49A62DCEC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "69903C50-92EF-4A74-9AAE-BA0C971E200D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B0DA067E2EF33E6F94AB021492BB2AE555B1133A" : "renderer.gua\/",
+    "374BA58D15594591BF05794F0591B1E49A62DCEC" : "render\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "render",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "render.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:imagine243\/render.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "374BA58D15594591BF05794F0591B1E49A62DCEC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/guaxiao\/renderer.gua.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B0DA067E2EF33E6F94AB021492BB2AE555B1133A"
+    }
+  ]
+}

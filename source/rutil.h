@@ -19,7 +19,7 @@ static std::vector<std::string> split(const std::string &str, char delimiter)
 	std::size_t start = 0;
 	std::size_t end = 0;
 
-	while (end = str.find(delimiter, start) != std::string::npos)
+	while ((end = str.find(delimiter, start)) != std::string::npos)
 	{
 		l.push_back(str.substr(start, end - start));
 		start = end + 1;

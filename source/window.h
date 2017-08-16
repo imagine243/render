@@ -12,6 +12,7 @@
 #include <cstdio>            // fprint function, stderr
 #include "rutil.h"
 #include "canvas.h"
+#include <SDL/SDL.h>
 
 static const int WindowWidth = 800;
 static const int WindowHeight = 600;
@@ -53,12 +54,12 @@ public:
         _height = height;
 
         //canvas
-		_canvas = new Canvas((uint32_t)screen->pixels, width, height);
+		_canvas = new Canvas((uint32_t *)screen->pixels, width, height);
 
         _runing = true;
 
-		const char * modelPath = "";
-		const char * texturePath = "";
+		const char * modelPath = "illidan.gua3d";
+		const char * texturePath = "illidan.guaimage";
 
 		if (argc > 2) {
 			modelPath = argv[1];
