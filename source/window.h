@@ -12,7 +12,7 @@
 #include <cstdio>            // fprint function, stderr
 #include "rutil.h"
 #include "canvas.h"
-#include <SDL/SDL.h>
+#include <SDL.h>
 
 static const int WindowWidth = 800;
 static const int WindowHeight = 600;
