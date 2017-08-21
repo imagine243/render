@@ -18,9 +18,13 @@ static const int WindowWidth = 800;
 static const int WindowHeight = 600;
 
 class Window {
-    SDL_Surface * _screen;
     Canvas * _canvas;
     Mesh * _mesh;
+    uint32_t * pixels;
+    
+    SDL_Renderer * renderer;
+    SDL_Texture * texture;
+    SDL_Window * win;
     
     int _width;
     int _height;
@@ -35,26 +39,38 @@ class Window {
 	bool pressedLeft = false;
 	bool pressedRight = false;
 public:
-    Window(int argc, char * argv[], int width=WindowWidth, int height = WindowHeight, const char * title = "render"){
-        //init 
-        if(SDL_Init(SDL_INIT_VIDEO) != 0){
-            fprintf(stderr, "sdl init failed \n");
-        }
+    Window(int argc, const char * argv[], int width=WindowWidth, int height = WindowHeight, const char * title = "render"){
+//        //init 
+//        if(SDL_Init(SDL_INIT_VIDEO) != 0){
+//            fprintf(stderr, "sdl init failed \n");
+//        }
 
-        SDL_Surface * screen = SDL_SetVideoMode(width,height,32,SDL_SWSURFACE);
-        if(screen == NULL){
-            SDL_Quit();
-            fprintf(stderr, "SDL_SetVideoMode failed \n");
-        }
-        _screen = screen;
+//        SDL_Surface * screen = SDL_SetVideoMode(width,height,32,SDL_SWSURFACE);
+//        if(screen == NULL){
+//            SDL_Quit();
+//            fprintf(stderr, "SDL_SetVideoMode failed \n");
+//        }
+//        _screen = screen;
+        
+        win = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_SWSURFACE);
+        renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
+        
+        texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, width, height);
+        
+        
 
-        SDL_WM_SetCaption(title, NULL);
+//        SDL_WM_SetCaption(title, NULL);
 
         _width = width;
         _height = height;
+        
+        pixels = new uint32_t[_width * _height];
+        for (int i = 0; i < _width * _height; i++) {
+            pixels[i] = 0x00000000;
+        }
 
         //canvas
-		_canvas = new Canvas((uint32_t *)screen->pixels, width, height);
+		_canvas = new Canvas((uint32_t *)pixels, width, height);
 
         _runing = true;
 
@@ -66,26 +82,71 @@ public:
 			texturePath = argv[2];
 		}
 
-		_mesh = new Mesh(modelPath, texturePath);
-    };
+//		_mesh = new Mesh(modelPath, texturePath);
+        _mesh = new Mesh();
+        _mesh->vertices.push_back(Vertex( vector(0,0,0),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(1,0,0),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(0,1,0),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(1,1,0),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(0,0,1),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(1,0,1),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(0,1,1),vector(0,0,0),0,0,color::randomColor()));
+        _mesh->vertices.push_back(Vertex( vector(1,1,1),vector(0,0,0),0,0,color::randomColor()));    };
 
     virtual ~Window(){
         //clean resouce
 		delete _canvas;
 		delete _mesh;
+        delete [] pixels;
     };
 
     void run()
     {
         while(_runing){
-            SDL_LockSurface(_screen);
+//            SDL_LockSurface(_screen);
+            updateInput();
+            update();
+            draw();
+            clear();
+            show();
         }
-
-		updateInput();
-		update();
-		clear();
-		draw();
-		show();
+        
+        SDL_DestroyTexture(texture);
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(win);
+        SDL_Quit();
+    };
+    
+    void clear(){
+        SDL_RenderClear(renderer);
+    };
+    
+    void draw(){
+//        		_canvas->drawMash(*_mesh);
+        
+//         //draw line
+//                Vertex ver1 = Vertex(vector(), vector(), 0.0f, 0.0f, color(1.0f,0.0f,0.0f,1.0f));
+//                Vertex ver2 = Vertex(vector(100.0f, 100.0f, 0.0f), vector(), 0.0f,0.0f);
+//                _canvas->drawLine(ver1, ver2);
+        
+//        // draw Triangle
+//        Vertex ver1 = Vertex(vector(), vector(), 0.0f, 0.0f, color(1.0f,0.0f,0.0f,1.0f));
+//        Vertex ver2 = Vertex(vector(100.0f, 100.0f, 0.0f), vector(), 0.0f,0.0f,color(0.0f,1.0f,0.0f,1.0f));
+//        Vertex ver3 = Vertex(vector(50.0f, 200.0f, 0.0f), vector(), 0.0f,0.0f,color(0.0f,0.0f,1.0f,1.0f));
+//        _canvas->drawTriangle(ver1, ver2, ver3, NULL);
+        
+        // draw cube
+        
+        
+        SDL_UpdateTexture(texture, NULL, pixels, _width * sizeof(uint32_t));
+    };
+    
+    void show(){
+        //		SDL_UnlockSurface(_screen);
+        //		SDL_UpdateRect(_screen, 0, 0, 0, 0);
+        
+        SDL_RenderCopy(renderer, texture, NULL, NULL);
+        SDL_RenderPresent(renderer);
     };
 
     void update(){
@@ -111,25 +172,14 @@ public:
 		}
     };
 
-    void clear(){
-		_canvas->clear();
-    };
 
-    void draw(){
-		_canvas->drawMash(*_mesh);
-    }
-
-    void show(){
-		SDL_UnlockSurface(_screen);
-		SDL_UpdateRect(_screen, 0, 0, 0, 0);
-    }
 
 	void quit() {
 		_runing = false;
-	}
+    };
 
 	void onKeyEvent(const SDL_Event *event) {
-		SDLKey key = (*event).key.keysym.sym;
+		SDL_Keycode key = (*event).key.keysym.sym;
 		bool keyIsDown = (event->type == SDL_KEYDOWN);
 		if (key == SDLK_ESCAPE) {
 			quit();
@@ -158,14 +208,14 @@ public:
 		else if (key == SDLK_d) {
 			pressedD = keyIsDown;
 		}
-	}
+    };
 
 	void onMouseEvent(const SDL_Event *event) {
 
-	}
+    };
 	
 	void HandleEvent(const SDL_Event *event) {
-		unsigned char eventType = event->type;
+		Uint32 eventType = event->type;
 
 		if (eventType == SDL_QUIT) {
 			quit();
@@ -178,7 +228,7 @@ public:
 		{
 			onMouseEvent(event);
 		}
-	}
+    };
 
 };
 #endif /* window_h */

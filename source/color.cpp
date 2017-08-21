@@ -21,13 +21,16 @@ uint32_t color::uint32() const
 	uint32_t B = (uint32_t)(b * 255.0f);
 	uint32_t A = (uint32_t)(a * 255.0f);
 
-#ifdef __APPLE__
-	uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
-#elif _WIN32
-	uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
-#else
-	uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
-#endif 
+//#ifdef __APPLE__
+//	uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
+//#elif _WIN32
+//	uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
+//#else
+//	uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
+//#endif
+    
+    uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
+    
 	return value;
 
 }

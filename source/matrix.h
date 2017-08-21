@@ -124,9 +124,9 @@ public:
 	};
 
 	static matrix rotation(const vector &r) {
-		matrix x = matrix::rotation(r.x);
-		matrix y = matrix::rotation(r.y);
-		matrix z = matrix::rotation(r.z);
+		matrix x = matrix::rotationX(r.x);
+		matrix y = matrix::rotationY(r.y);
+		matrix z = matrix::rotationZ(r.z);
 		
 		return z * x * y;
 	};

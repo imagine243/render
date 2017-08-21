@@ -80,13 +80,17 @@ void Canvas::drawScanLine(const Vertex &v1, const Vertex  &v2, int y, const text
 	int length = (x2 - x1) * sign + 1;
 	for (int x = x1 ,i = 0; i < length; i++, x += sign)
 	{
-		if (x2 != x2) {
+		if (x2 != x1) {
 			factor = (float)(x - x1) / (x2 - x1);
 		}
 
 		auto v = v1.interpolate(v2, factor);
-		auto c = t->sample(v.u, v.v);
-		drawPoint(v.position, c);
+        if(t == NULL){
+            drawPoint(vector(x,y,v.position.z), v.c);
+        }else{
+            auto c = t->sample(v.u, v.v);
+            drawPoint(vector(x,y,v.position.z), c);
+        }
 	}
 
 }

@@ -11,6 +11,8 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    std::cout << "Hello, render!\n";
+    Window win = Window(argc,argv);
+    win.run();
     return 0;
 }
