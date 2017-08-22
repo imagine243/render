@@ -19,7 +19,7 @@ public:
 	std::vector<Vertex> vertices;
 	std::vector<int> indices;
 
-	texture * t;
+	texture * t = NULL;
 
 	Mesh() {
 		position = vector(0, 0, 0);

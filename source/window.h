@@ -65,16 +65,14 @@ public:
         _height = height;
         
         pixels = new uint32_t[_width * _height];
-        for (int i = 0; i < _width * _height; i++) {
-            pixels[i] = 0x00000000;
-        }
 
         //canvas
 		_canvas = new Canvas((uint32_t *)pixels, width, height);
 
         _runing = true;
 
-		const char * modelPath = "illidan.gua3d";
+		const char * modelPath = "cube.3d";
+//        const char * modelPath = "illidan.gua3d";
 		const char * texturePath = "illidan.guaimage";
 
 		if (argc > 2) {
@@ -82,16 +80,9 @@ public:
 			texturePath = argv[2];
 		}
 
-//		_mesh = new Mesh(modelPath, texturePath);
-        _mesh = new Mesh();
-        _mesh->vertices.push_back(Vertex( vector(0,0,0),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(1,0,0),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(0,1,0),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(1,1,0),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(0,0,1),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(1,0,1),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(0,1,1),vector(0,0,0),0,0,color::randomColor()));
-        _mesh->vertices.push_back(Vertex( vector(1,1,1),vector(0,0,0),0,0,color::randomColor()));    };
+		_mesh = new Mesh(modelPath, texturePath);
+        
+    };
 
     virtual ~Window(){
         //clean resouce
@@ -122,7 +113,10 @@ public:
     };
     
     void draw(){
-//        		_canvas->drawMash(*_mesh);
+        _canvas->clear();
+        
+        
+        		_canvas->drawMash(*_mesh);
         
 //         //draw line
 //                Vertex ver1 = Vertex(vector(), vector(), 0.0f, 0.0f, color(1.0f,0.0f,0.0f,1.0f));
@@ -130,9 +124,9 @@ public:
 //                _canvas->drawLine(ver1, ver2);
         
 //        // draw Triangle
-//        Vertex ver1 = Vertex(vector(), vector(), 0.0f, 0.0f, color(1.0f,0.0f,0.0f,1.0f));
-//        Vertex ver2 = Vertex(vector(100.0f, 100.0f, 0.0f), vector(), 0.0f,0.0f,color(0.0f,1.0f,0.0f,1.0f));
-//        Vertex ver3 = Vertex(vector(50.0f, 200.0f, 0.0f), vector(), 0.0f,0.0f,color(0.0f,0.0f,1.0f,1.0f));
+//        Vertex ver1 = Vertex(vector(400.0f,300.0f,0.5f), vector(), 0.0f, 0.0f, color(1.0f,0.0f,0.0f,1.0f));
+//        Vertex ver2 = Vertex(vector(414.0f, 300.0f, 0.5f), vector(), 0.0f,0.0f,color(0.0f,1.0f,0.0f,1.0f));
+//        Vertex ver3 = Vertex(vector(414.0f, 289.0f, 0.5f), vector(), 0.0f,0.0f,color(0.0f,0.0f,1.0f,1.0f));
 //        _canvas->drawTriangle(ver1, ver2, ver3, NULL);
         
         // draw cube

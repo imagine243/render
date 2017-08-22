@@ -1,6 +1,7 @@
 #include "canvas.h"
 
 #include <cfloat>
+#include <iostream>
 
 void Canvas::putPixel(int x, int y, float z, const color &c)
 {
@@ -173,6 +174,7 @@ Vertex Canvas::project(const Vertex &v, const matrix &transform) const
 	vector p = transform.transform(v.position);
 	p.x = p.x * _width + _width / 2;
 	p.y = -p.y * _height + _height / 2;
-
+    
+    std::cout<< p.z << std::endl;
 	return Vertex(p, v.normal, v.u, v.v, v.c);
 }

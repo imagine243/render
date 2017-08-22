@@ -16,9 +16,12 @@ public:
 	color(uint32_t rgba);
 
 	static color randomColor() {
-		float r = (rand() % 255) / 255.0f;
-		float g = (rand() % 255) / 255.0f;
-		float b = (rand() % 255) / 255.0f;
+//		float r = (rand() % 255) / 255.0f;
+//		float g = (rand() % 255) / 255.0f;
+//		float b = (rand() % 255) / 255.0f;
+        float r = rand() % 2;
+        float g = rand() % 2;
+        float b = rand() % 2;
 		return color(r, g, b, 1);
 	}
 

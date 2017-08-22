@@ -1,5 +1,6 @@
 #include <fstream>
 #include <string>
+#include <sstream>
 
 #include "Mesh.h"
 #include "rutil.h"
@@ -10,7 +11,7 @@ Mesh::Mesh(const char *path, const char * texturePath)
 		rotation = vector(0, 0, 0);
 		scale = vector(1, 1, 1);
 
-		t = new texture(texturePath);
+//		t = new texture(texturePath); 
 
 		const char delimiter = ' ';
 		std::ifstream meshFIle(path);
@@ -42,8 +43,10 @@ Mesh::Mesh(const char *path, const char * texturePath)
 
 			float u = atof(vs[6].c_str());
 			float v = atof(vs[7].c_str());
+            
+            vertices.push_back(Vertex(vector(x, y, z), vector(nx, ny, nz), u, v, color::randomColor()));
 
-			vertices.push_back(Vertex(vector(x, y, z), vector(nx, ny, nz), u, v, color::randomColor()));
+            
 		}
 
 		for (int i = 0; i < numOfTriangles; i++)
